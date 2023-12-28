@@ -1,0 +1,24 @@
+<mat-toolbar class="toolbar">
+  <span>Angular Material Decompose</span>
+  <span class="spacer"></span>
+  <button mat-button class="version-picker" aria-label="Choose an Angular version">
+    <mat-icon>arrow_drop_down</mat-icon>
+    <span class="label">15.2.9</span>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav 
+    opened 
+    [disableClose]="true"
+    [mode]="'side'"
+  >
+    <div class="section">Components</div>
+    <mat-nav-list aria-label="List of components elements">
+      <a mat-list-item [activated]="currentPage === 'badge'" [routerLink]="'components/badge'" routerLinkActive="active">Badge</a>
+      <a mat-list-item [activated]="currentPage === 'button'" [routerLink]="'components/button'" routerLinkActive="active">Button</a>
+      <a mat-list-item [activated]="currentPage === 'checkbox'" [routerLink]="'components/checkbox'" routerLinkActive="active">Checkbox</a>
+      <a mat-list-item [activated]="currentPage === 'chips'" [routerLink]="'components/chips'" routerLinkActive="active">Chips</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content"><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>
